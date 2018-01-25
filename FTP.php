@@ -51,7 +51,8 @@ class FTP implements FTPInterface, RemoteInterface
         }
         else
         {
-            $config = Config::default(new FTPDefaultConfiguration)::get('Services', 'ftp');
+            $config = Config::default('ZN\Remote\FTPDefaultConfiguration')
+                            ::get('Services', 'ftp');
         }
 
         $this->_connect($config);

@@ -64,7 +64,8 @@ class SSH implements SSHInterface, RemoteInterface
         }
         else
         {
-            $config = Config::default(new SSHDefaultConfiguration)::get('Services', 'ssh');
+            $config = Config::default('ZN\Remote\SSHDefaultConfiguration')
+                            ::get('Services', 'ssh');
         }
 
         $this->_connect($config);
